@@ -1,0 +1,72 @@
+@font-face {
+  font-family: NotoSansTC;
+  src: url('./Noto_Sans_TC/NotoSansTC-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: NotoSansTC;
+  src: url('./Noto_Sans_TC/NotoSansTC-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: NotoSansTC;
+  src: url('./Noto_Sans_TC/NotoSansTC-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: NotoSansTC;
+  src: url('./Noto_Sans_TC/NotoSansTC-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url('./Roboto/Roboto-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url('./Roboto/Roboto-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url('./Roboto/Roboto-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url('./Roboto/Roboto-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: FiraCode;
+  src: url('./Fira_Code/FiraCode-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: FiraCode;
+  src: url('./Fira_Code/FiraCode-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: FiraCode;
+  src: url('./Fira_Code/FiraCode-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: FiraCode;
+  src: url('./Fira_Code/FiraCode-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}

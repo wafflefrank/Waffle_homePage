@@ -1,0 +1,55 @@
+:root {
+    // 品牌色、tip色
+    --vp-c-brand-1: #4b80db;
+    --vp-c-brand-2: #457ddf;
+    --vp-c-brand-3: #3272e0;
+    --vp-c-brand-soft: rgba(23, 127, 232, 0.16);
+
+    // 把tip 改為品牌色 (Component: Custom Block)
+    --vp-custom-block-tip-border: transparent;
+    --vp-custom-block-tip-text: var(--vp-c-text-1);
+    --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+    --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #9a2447 30%, #3272e0);
+
+    --vp-home-hero-image-background-image: linear-gradient(-45deg, #9a2447 50%, #3272e0 50%);
+    --vp-home-hero-image-filter: blur(44px);
+
+    // 字型設定
+    --vp-font-family-base: "Roboto", "NotoSansTC", "微軟正黑體", "Arial", sans-serif;
+    --vp-font-family-mono: "FiraCode", "Roboto", sans-serif;
+}
+
+.dark {
+    --vp-c-brand-1: #4b80db;
+    --vp-c-brand-2: #457ddf;
+    --vp-c-brand-3: #3272e0;
+    --vp-c-brand-soft: rgba(19, 110, 202, 0.16);
+}
+
+/* logo style */
+.VPImage {
+    width: 60px !important; /* 固定寬度 */
+    height: 60px !important; /* 固定高度 */
+    object-fit: cover !important; /* 圖片自動裁切填滿 */
+    border-radius: 50% !important; /* 變成完美圓形 */
+    /* 圓形 */
+    /* border       : 2px solid white; */
+    /* (可選) 白色外框 */
+}
+.outline-title {
+    font-weight: bold !important;
+    font-size: 20px !important;
+}
+.outline-marker {
+    background-color: #3272e0 !important; /* ← 想改什麼顏色都行 */
+}
+.outline-link.active {
+    /* ← 想改什麼顏色都行 */
+    padding-left: 8px; /* 可加一些左邊空間更美觀 */
+    border-color: #3272e0;
+    color: #3272e0 !important; /* 同時改文字顏色 */
+    font-weight: bold;
+}
