@@ -11,8 +11,8 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     logo: {
-      light: '../Img/Home.png',
-      dark: '../Img/Home.png',
+      light: '/Img/Home.png',
+      dark: '/Img/Home.png',
       alt: 'Opshell Logo'
     },
     nav: [
@@ -34,11 +34,11 @@ export default defineConfig({
             items: [
               {
                 text: 'javaScript',
-                link: '../pages/code-sea/javaScript.md'
+                link: '/pages/code-sea/javaScript'
               },
               {
                 text: 'vitepress',
-                link: '../pages/code-sea/vitepress/day-1'
+                link: '/pages/code-sea/vitepress/day-1'
               }
             ]
           }
