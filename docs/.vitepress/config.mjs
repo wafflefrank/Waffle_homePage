@@ -22,7 +22,7 @@ export default defineConfig({
         link: '/vitepress-thirty-day'
       },
       {
-        text: 'Article',
+        text: '🌟Article',
         items: [
           {
             text: "Life's Mumurs",
@@ -32,12 +32,12 @@ export default defineConfig({
             text: 'Code Sea',
             items: [
               {
-                text: 'typescript',
-                link: '/article/code-sea/typescript/day-1'
+                text: 'javaScript',
+                link: '../pages/code-sea/javaScript.md'
               },
               {
                 text: 'vitepress',
-                link: '/article/code-sea/vitepress/day-1'
+                link: '../pages/code-sea/vitepress/day-1'
               }
             ]
           }
@@ -45,16 +45,34 @@ export default defineConfig({
       }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/': [
+        {
+          text: 'Examples',
+          items: [
+            { text: 'Markdown Examples', link: '/markdown-examples' },
+            { text: 'Runtime API Examples', link: '/api-examples' }
+          ]
+        }
+      ],
+      '/pages/code-sea/': [
+        {
+          text: 'JavaScript',
+          items: [
+            { text: '1. 前言', link: '/pages/code-sea/day-1' },
+            { text: 'Enum & 使用情境', link: '/pages/code-sea/enum' }
+          ]
+        }
+      ]
+    },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      {
+        icon: 'instagram',
+        link: 'https://www.instagram.com/yurayou.yu/',
+        ariaLabel: "Waffle's instagram"
+      }
+    ]
   }
 })
