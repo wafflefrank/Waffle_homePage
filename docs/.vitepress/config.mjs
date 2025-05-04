@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/Waffle_homePage/', // 部屬到github pages的設定 一定要加斜線 `/` 開頭與結尾
   title: "Waffle's Blog",
   description: '紀錄生活 & 專案的地方',
   themeConfig: {
