@@ -25,7 +25,8 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'max-len': 0,
-    'no-control-regex': 'off'
+    'no-control-regex': 'off',
+    'import/no-unresolved': 'off' // 👈 關掉這條規則
   },
   globals: {
     YT: 'readonly',

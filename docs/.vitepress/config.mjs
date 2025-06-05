@@ -13,24 +13,24 @@ export default defineConfig({
     logo: {
       light: '/Img/Home.png',
       dark: '/Img/Home.png',
-      alt: 'Opshell Logo'
+      alt: 'Waffle Logo'
     },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
       {
-        text: '✨️ Vitepress Thirty Day',
-        link: '/vitepress-thirty-day'
+        text: '✨️Resume',
+        link: '/pages/resume/resume'
       },
       {
-        text: '🌟Article',
+        text: '🌟Project',
         items: [
           {
             text: "Life's Mumurs",
             link: '/article/life-mumurs/life'
           },
           {
-            text: 'Code Sea',
+            text: 'Side Project',
             items: [
               {
                 text: 'javaScript',
@@ -56,11 +56,12 @@ export default defineConfig({
           ]
         }
       ],
+      '/pages/resume/': [],
       '/pages/code-sea/': [
         {
           text: 'JavaScript',
           items: [
-            { text: '1. 前言', link: '/pages/code-sea/day-1' },
+            { text: '1. 前言', link: '/pages/code-sea/about_waffle' },
             { text: 'Enum & 使用情境', link: '/pages/code-sea/enum' }
           ]
         }

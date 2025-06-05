@@ -1,0 +1,160 @@
+//RWD
+@mixin setRWD($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+//Browser compatibility
+@mixin setBC($k, $v) {
+    -webkit-#{$k}: $v;
+    -moz-#{$k}: $v;
+    -ms-#{$k}: $v;
+    -o-#{$k}: $v;
+    #{$k}: $v;
+}
+
+// 設定flex
+@mixin setFlex($justify: center, $align: center, $gap: 0, $direction: "") {
+    display: flex;
+    @if $direction != "" {
+        flex-direction: $direction;
+    }
+    align-items: $align;
+    justify-content: $justify;
+    @if $gap != 0 {
+        gap: $gap;
+    }
+}
+
+@mixin setBack($rep: no-repeat, $pos: 50% 50%, $siz: cover) {
+    background : {
+        repeat: $rep;
+        position: $pos;
+        size: $siz;
+    }
+}
+@mixin setSize($w: 0, $h: 0) {
+    width: $w;
+    height: $h;
+}
+@mixin setProportion($proportion: 100%, $bs: contain) {
+    // 等比例區塊
+    background-size: $bs;
+    &::before {
+        content: "";
+        display: block;
+        padding-top: $proportion;
+        @content;
+    }
+}
+
+// 分配字距justify
+@mixin setJustify() {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+// 多行省略號
+@mixin setJustify($rows: 2) {
+    display: -webkit-inline-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $rows;
+    overflow: hidden;
+}
+
+// 設定文字大小&行高一樣(這樣韓padding 才不會變很大)
+@mixin setFontSize($size) {
+    font-size: $size;
+    line-height: $size;
+}
+
+//Delay Animate
+@mixin setDelay($ty, $e, $tv, $btv: 0, $s: 1) {
+    @for $i from $s through $e {
+        &:nth-child(#{$i}) {
+            #{$ty}: #{$btv + $i * $tv}s;
+            @content;
+        }
+    }
+}
+@mixin setStr($el, $ty, $baseStr, $e, $attcStr: "", $s: 1) {
+    @for $i from $s through $e {
+        &:nth-child(#{$i})#{$el} {
+            #{$ty}: #{$baseStr}#{$i}#{$attcStr};
+            @content;
+        }
+    }
+    //EX:{
+    // @include setStr("::after", "background", "url('../image/contact/line'", 6, ".png')");
+    // }
+}
+
+// 設定進場：未進場樣式, 進場樣式, 動畫曲線(預設)
+@mixin setIntoView($basc, $show, $cubic: 0.85s $cubic-SiRo) {
+    @each $k, $v in $basc {
+        #{$k}: $v;
+    }
+    transition: $cubic;
+    &.animation {
+        @each $k, $v in $show {
+            #{$k}: $v;
+        }
+        @content;
+    }
+    //EX:{
+    // .setIntoView{
+    //     @include setIntoView(
+    //         $basc:(
+    //             transform: translate3d(-50px,0,0),
+    //             opacity: 0,
+    //         ),
+    //         $show:(
+    //             transform: translate3d(0,0,0),
+    //             opacity: 1,
+    //         ),
+    //         $cubic: .65s $cubic-SiRo
+    //     )
+    // }
+    //}
+}
+
+// 設定凹陷樣式
+@mixin setSunken() {
+    box-shadow:
+        1px 1px 2px -1px rgba(0, 0, 0, 0.35) inset,
+        -1px -1px 2px -1px rgba(255, 255, 255, 0.95) inset;
+}
+
+// 特殊邊框
+@mixin setBorder($notchSize: 25px, $notchColor: var(--color-view-block), $borderColor: var(--color-primary-light)) {
+    position: relative;
+    background-clip: padding-box;
+    border: 2px solid $borderColor;
+    border-radius: 20px;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        z-index: 1;
+    }
+
+    &::before {
+        left: 18px;
+        background: $notchColor;
+        @include setSize($notchSize, 3px);
+    }
+    &::after {
+        left: 22px;
+        background: $borderColor;
+        @include setSize(3px, 3px);
+        border-radius: 50%;
+    }
+}

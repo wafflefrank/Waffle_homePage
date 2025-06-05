@@ -6,9 +6,9 @@ hero:
   name: "Waffle's Blog"
   text: 'Notes x Life x Codes'
   tagline: My great project tagline
-  # image:
-  #   src: /Img/夜景.jpg
-  #   alt: Opshell-3D
+  image:
+    src: /Img/夜景.jpg
+    alt: Waffle-3D
   actions:
     - theme: brand
       text: Markdown Examples

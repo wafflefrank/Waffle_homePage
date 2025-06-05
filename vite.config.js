@@ -1,20 +1,82 @@
-import { fileURLToPath, URL } from 'node:url'
+// import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import svgr from 'vite-plugin-svgr'
+import path from 'path'
+import AutoImport from 'unplugin-auto-import/vite'
 
-// const INVALID_CHAR_REGEX = /[\x00-\x1F\x7F<>*#"{}|^[\]`;?:&=+$,]/g
-// const DRIVE_LETTER_REGEX = /^[a-z]:/i
-
-// https://vitejs.dev/config/
 export default defineConfig({
-  // lintOnSave: false, // 关闭ESLint
-  // productionSourceMap: false, // 设为false表示不生成source map文件
-  // chainWebpack: (config) => {
-  //   config.optimization.minimize(false) // vuecli去掉代码混淆和压缩
+  // css: {
+  //   // 共用全域 SCSS
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: `@import "./docs/.vitepress/theme/scss/mixin.scss";`,
+  //       charset: false
+  //     }
+  //   }
   // },
-  // transpileDependencies: true,
+  resolve: {
+    alias: {
+      // 設定別名
+      '@': path.resolve(__dirname, '../'), // docs 當根目錄
+      '@vitepress': path.resolve(__dirname, 'docs/.vitepress'), // .vitepress 目錄
+      '@components': path.resolve(__dirname, '../', 'components'),
+      '@data': path.resolve(__dirname, '../', 'data'),
+      '@hooks': path.resolve(__dirname, '../', 'hooks'),
+      '@pages': path.resolve(__dirname, '../', 'pages'),
+      'swiper/vue': 'swiper/vue',
+      'swiper/css': 'swiper/css'
+      // '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: `@import "./docs/.vitepress/theme/scss/mixin.scss";`,
+  //       charset: false
+  //     }
+  //   }
+  // },
+  plugins: [
+    vue(),
+    svgr(),
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
+      ],
+      // global imports to register
+      imports: [
+        // presets
+        'vue',
+        {
+          // custom
+          '@vueuse/core': [
+            // named imports
+            'useMouse', // import { useMouse } from '@vueuse/core',
+            // alias
+            ['useFetch', 'useMyFetch']
+          ],
+          axios: [
+            // default imports
+            ['default', 'axios']
+          ],
+          vue: ['PropType', 'defineProps', 'InjectionKey', 'Ref']
+        }
+      ],
+      dirs: [],
+      dts: './types/auto-imports.d.ts', // typescript 宣告檔案位置
+      vueTemplate: false,
+      eslintrc: {
+        enabled: false, // Default `false`
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true
+      }
+    })
+  ],
   build: {
     minify: false, // 關閉混淆
     rollupOptions: {
@@ -37,14 +99,6 @@ export default defineConfig({
     }
   },
 
-  plugins: [vue(), svgr()],
-  resolve: {
-    alias: {
-      'swiper/vue': 'swiper/vue',
-      'swiper/css': 'swiper/css',
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
   base: '/' // 將 <REPO_NAME> 替換為你的 GitHub repository 名稱
   // base: '/Daga-homePage/' // 將 <REPO_NAME> 替換為你的 GitHub repository 名稱
   // build: {
