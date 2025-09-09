@@ -83,7 +83,7 @@ export default defineConfig({
       output: {
         entryFileNames: 'js/[name].js', // 入口文件 (e.g., main.js)
         chunkFileNames: 'js/[name].js', // 其他拆分的 JS
-        assetFileNames: (assetInfo) => {
+        assetFileNames: assetInfo => {
           if (/\.(png|jpe?g|gif|svg|webp|avif)$/.test(assetInfo.name ?? '')) {
             return 'img/[name][extname]' // 圖片存放於 img/
           }
