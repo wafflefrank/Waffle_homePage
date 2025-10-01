@@ -14,7 +14,10 @@ import skillsData from './data/skills'
           <span class="en">Waffle</span>
         </h1>
 
-        <h4 style="margin-top: 0" class="job-title">Front-End Developer</h4>
+        <h4 style="margin-top: 0; font-size: 16px" class="job-title">Front-End Developer</h4>
+        <div class="mbti">
+          <img :src="withBase('/Img/isfp3.png')" alt="#" />
+        </div>
       </header>
 
       <!-- <hr class="divider" /> -->
@@ -41,27 +44,27 @@ import skillsData from './data/skills'
       <OrgaSectionBlock title="Contact">
         <ul class="contact-box">
           <li class="contact">
-            <ElSvgIcon name="call" />
+            <i class="text-white fa-solid fa-phone"></i>
             <a href="tel:+886 938643321" target="_blank" rel="noopener noreferrer"
-              >+886 938643321</a
+              >+886 953005292</a
             >
           </li>
           <li class="contact">
             <ElSvgIcon name="mail" />
-            <a href="mailto:phenomx9990@gmail.com" target="_blank" rel="noopener noreferrer"
-              >phenomx9990@gmail.com</a
+            <a href="mailto:waffletea0702@gmail.com" target="_blank" rel="noopener noreferrer"
+              >waffletea0702@gmail.com</a
             >
           </li>
-          <li class="contact">
+          <!-- <li class="contact">
             <ElSvgIcon name="language" />
             <a href="https://www.opshell.info" target="_blank" rel="noopener noreferrer"
-              >Opshell's Website</a
+              >Waffle's Website</a
             >
-          </li>
+          </li> -->
           <li class="contact">
             <ElSvgIcon name="language" />
-            <a href="https://github.com/Opshell" target="_blank" rel="noopener noreferrer"
-              >Opshell's Github</a
+            <a href="https://github.com/wafflefrank" target="_blank" rel="noopener noreferrer"
+              >Waffle's Github</a
             >
           </li>
           <li class="contact">
@@ -70,7 +73,7 @@ import skillsData from './data/skills'
               href="https://maps.app.goo.gl/9q1aF5LEaEihmDh37"
               target="_blank"
               rel="noopener noreferrer"
-              >Tainan, Taiwan</a
+              >Taoyuan, Taiwan</a
             >
           </li>
         </ul>
@@ -154,7 +157,7 @@ import skillsData from './data/skills'
   h3 {
     color: var(--vp-c-text-1);
     font-family: Inter;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 500;
     font-style: normal;
     line-height: 48px;
@@ -169,6 +172,13 @@ import skillsData from './data/skills'
     font-style: normal;
     line-height: 32px;
   }
+}
+.mbti {
+  width: calc(100% - 20px);
+  box-shadow: 0 0 1px 1px #eabd5b;
+  transform: translate(2px);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .header-block {
@@ -282,6 +292,10 @@ import skillsData from './data/skills'
 
   .contact {
     @include setFlex(flex-start, center, 10px);
+  }
+  a {
+    text-decoration: none;
+    color: #ffffff;
   }
 }
 
