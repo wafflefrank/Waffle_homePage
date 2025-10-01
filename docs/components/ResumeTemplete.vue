@@ -81,6 +81,7 @@ import skillsData from './data/skills'
     </div>
 
     <!-- <hr class="divider" />
+     
 
     <div class="right-block">
       <OrgaSectionBlock title="About Opshell">
@@ -112,6 +113,8 @@ import skillsData from './data/skills'
         </article>
       </OrgaSectionBlock>
     </div> -->
+    <!-- 垂直分隔線 -->
+    <div class="vertical-divider"></div>
   </article>
 </template>
 
@@ -136,7 +139,7 @@ import skillsData from './data/skills'
     gap: 20px;
     .divider {
       display: inline-block;
-      background-color: rgb(255, 255, 255);
+      background-color: var(--vp-c-divider-1);
       width: 100%;
       height: 1px;
     }
@@ -230,6 +233,13 @@ import skillsData from './data/skills'
 //     }
 //   }
 // }
+.vertical-divider {
+  width: 1.2px;
+  // height: 1px;
+  background-color: var(--vp-c-divider-1);
+  opacity: 0.5;
+  margin: 0 20px;
+}
 .skills-block {
   display: flex;
   flex-direction: column;
@@ -248,7 +258,7 @@ import skillsData from './data/skills'
   font-weight: 600;
   margin: 0;
   color: var(--vp-c-text-1, #ffffff);
-  border-top: 2px solid #ffffff;
+  border-top: 2px solid var(--vp-c-divider-1);
   padding-top: 10px;
 }
 
