@@ -1,6 +1,7 @@
 ---
 title: Waffle's Resume
 author: 'Opshell'
+aside: false
 ---
 
 <script setup>

@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Waffle's Blog"
-  text: 'Notes x Life x Codes'
-  tagline: My great project tagline
+  text: 'Life x food x Codes'
+  tagline: 鬆餅茶的部落格
   image:
     src: /Img/夜景.jpg
     alt: Waffle-3D

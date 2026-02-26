@@ -40,8 +40,8 @@
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #9a2447 30%, #3272e0);
   --vp-home-hero-image-background-image: linear-gradient(-45deg, #9a2447 50%, #3272e0 50%);
   --vp-home-hero-image-filter: blur(74px);
-  --vp-font-family-base: "Roboto", "NotoSansTC", "微軟正黑體", "Arial", sans-serif;
-  --vp-font-family-mono: "FiraCode", "Roboto", sans-serif;
+  --vp-font-family-base: "Noto Sans TC", sans-serif;
+  --vp-font-family-mono: "Noto Sans TC", monospace;
 }
 
 .dark {
@@ -51,17 +51,32 @@
   --vp-c-brand-soft: rgba(19, 110, 202, 0.16);
   --vp-c-divider-1: #ffffff;
 }
-
-/* logo style */
+/* 導航列：上下間距 + 滾動時反黑背景貼齊、不超出 */
+.VPNavBar .wrapper {
+  padding: 10px 0 !important;
+}
+.VPNavBar {
+  height: calc(var(--vp-nav-height) + 20px) !important;
+}
+/* .VPNavBar .container {
+  height: calc(var(--vp-nav-height) + 20px) !important;
+}
+.VPNavBar .container > .title {
+  height: calc(var(--vp-nav-height) + 20px - 1px) !important;
+}
+.VPNavBar .content-body {
+  height: calc(var(--vp-nav-height) + 20px) !important;
+} */
+/* logo style - 加大顯示尺寸並優化縮放，減少失真（高 DPI 螢幕建議原圖至少 160×160） */
 .VPImage {
-  width: 60px !important; /* 固定寬度 */
-  height: 60px !important; /* 固定高度 */
+  width: 65px !important;   /* 稍大一點，縮放較少較清晰 */
+  height: 65px !important;
   -o-object-fit: cover !important;
-     object-fit: cover !important; /* 圖片自動裁切填滿 */
-  border-radius: 50% !important; /* 變成完美圓形 */
-  /* 圓形 */
-  /* border       : 2px solid white; */
-  /* (可選) 白色外框 */
+     object-fit: cover !important;
+  border-radius: 50% !important;
+  /* 縮放時盡量保持清晰（高 DPI 螢幕建議原圖至少 160×160） */
+  
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* 眩光logo style */
@@ -88,8 +103,30 @@
 }
 
 .heading .name {
-  font-size: 48px !important;
+  font-size: 50px !important;
 }
 .heading .text {
   font-size: 45px !important;
-}/*# sourceMappingURL=styleTwo.css.map */
+}
+
+/* 隱藏目錄 aside，並加大 content 總體寬度（維持置中） */
+.VPDoc .aside {
+  display: none !important;
+}
+@media (min-width: 960px) {
+  .VPDoc:not(.has-sidebar) .container {
+    max-width:  2000px !important;
+  }
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 1200px !important;
+  }
+}
+@media (min-width: 1440px) {
+  .VPDoc:not(.has-sidebar) .container {
+    max-width: 2000px !important;
+  }
+  .VPDoc:not(.has-sidebar) .content {
+    max-width: 1200px !important;
+  }
+}
+/*# sourceMappingURL=styleTwo.css.map */

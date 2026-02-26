@@ -11,8 +11,8 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     logo: {
-      light: '/Img/Home.png',
-      dark: '/Img/Home.png',
+      light: '/Img/waffle_logo.png',  // 改為 SVG 路徑（請先將檔放到 docs/public/Img/）
+      dark: '/Img/waffle_logo2.png',
       alt: 'Waffle Logo'
     },
     nav: [
@@ -69,7 +69,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/wafflefrank' },
       {
         icon: 'instagram',
         link: 'https://www.instagram.com/yurayou.yu/',

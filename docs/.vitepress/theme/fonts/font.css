@@ -1,23 +1,23 @@
 @font-face {
-  font-family: NotoSansTC;
+  font-family: "Noto Sans TC";
   src: url('./Noto_Sans_TC/NotoSansTC-Light.ttf');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: NotoSansTC;
+  font-family: "Noto Sans TC";
   src: url('./Noto_Sans_TC/NotoSansTC-Bold.ttf');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: NotoSansTC;
+  font-family: "Noto Sans TC";
   src: url('./Noto_Sans_TC/NotoSansTC-Medium.ttf');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: NotoSansTC;
+  font-family: "Noto Sans TC";
   src: url('./Noto_Sans_TC/NotoSansTC-Regular.ttf');
   font-weight: 400;
   font-style: normal;
